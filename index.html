@@ -284,7 +284,6 @@
       box-shadow:var(--shadow);
       border:1px solid rgba(17,20,38,.12);
       background:#efe6d5;
-      isolation:isolate;
     }
 
     .hero-frame img{
@@ -295,83 +294,11 @@
       filter:saturate(1.02) contrast(1.02);
     }
 
-    .hero-frame::before{
-      content:"";
-      position:absolute;
-      inset:-20%;
-      z-index:1;
-      background:
-        radial-gradient(circle at 55% 45%, rgba(255,206,122,.36), transparent 22%),
-        radial-gradient(circle at 55% 45%, rgba(255,248,235,.28), transparent 34%);
-      opacity:.72;
-      animation:heroBreath 9s ease-in-out infinite;
-      pointer-events:none;
-      mix-blend-mode:screen;
-    }
-
-    .ink-trace{
-      position:absolute;
-      z-index:2;
-      left:14%;
-      bottom:18%;
-      width:70%;
-      height:32%;
-      pointer-events:none;
-      opacity:.36;
-      transform:rotate(-3deg);
-    }
-
-    .ink-trace svg{
-      width:100%;
-      height:100%;
-      overflow:visible;
-    }
-
-    .ink-trace path{
-      fill:none;
-      stroke:rgba(17,20,38,.62);
-      stroke-width:4;
-      stroke-linecap:round;
-      stroke-linejoin:round;
-      stroke-dasharray:720;
-      stroke-dashoffset:720;
-      animation:inkDraw 16s ease-in-out infinite;
-      filter:blur(.15px);
-    }
-
-    .slow-leaf{
-      position:absolute;
-      z-index:2;
-      top:12%;
-      left:72%;
-      width:18px;
-      height:34px;
-      border-radius:100% 0 100% 0;
-      background:linear-gradient(135deg, rgba(126,139,104,.62), rgba(197,155,75,.38));
-      box-shadow:0 8px 18px rgba(17,20,38,.08);
-      transform-origin:center;
-      animation:heroLeaf 18s ease-in-out infinite;
-      opacity:.62;
-      pointer-events:none;
-    }
-
-    .slow-leaf::after{
-      content:"";
-      position:absolute;
-      left:48%;
-      top:8%;
-      width:1px;
-      height:84%;
-      background:rgba(17,20,38,.22);
-      transform:rotate(-8deg);
-    }
-
     .hero-note{
       position:absolute;
       left:1rem;
       right:1rem;
       bottom:1rem;
-      z-index:3;
       padding:1.25rem 1.35rem;
       border-radius:24px;
       background:linear-gradient(180deg,rgba(255,248,235,.58),rgba(255,248,235,.96));
@@ -446,8 +373,6 @@
       background:#efe6d5;
       overflow:hidden;
       border-bottom:1px solid rgba(17,20,38,.08);
-      position:relative;
-      isolation:isolate;
     }
 
     .path-img img{
@@ -457,67 +382,6 @@
       object-position:center;
       filter:saturate(1.02) contrast(1.03);
     }
-
-    .haiku-branch{
-      position:absolute;
-      z-index:2;
-      left:7%;
-      top:8%;
-      width:42%;
-      height:26%;
-      transform-origin:0% 20%;
-      animation:branchSway 8s ease-in-out infinite;
-      opacity:.62;
-      pointer-events:none;
-    }
-
-    .haiku-branch svg{
-      width:100%;
-      height:100%;
-      overflow:visible;
-    }
-
-    .haiku-branch path,
-    .haiku-branch line{
-      stroke:rgba(17,20,38,.58);
-      stroke-width:2.1;
-      stroke-linecap:round;
-      fill:none;
-    }
-
-    .haiku-branch ellipse{
-      fill:rgba(126,139,104,.56);
-      stroke:rgba(17,20,38,.22);
-      stroke-width:.7;
-      transform-origin:center;
-      animation:leafQuiver 7s ease-in-out infinite;
-    }
-
-    .haiku-waves{
-      position:absolute;
-      z-index:2;
-      right:12%;
-      bottom:15%;
-      width:34%;
-      aspect-ratio:1 / 1;
-      pointer-events:none;
-      opacity:.58;
-    }
-
-    .haiku-waves span{
-      position:absolute;
-      inset:50%;
-      width:18px;
-      height:18px;
-      border:1.5px solid rgba(23,24,39,.28);
-      border-radius:50%;
-      transform:translate(-50%,-50%) scale(.2);
-      opacity:0;
-      animation:waterRipple 6s ease-out infinite;
-    }
-
-    .haiku-waves span:nth-child(2){animation-delay:1.6s}
-    .haiku-waves span:nth-child(3){animation-delay:3.2s}
 
     .path-card .pad{
       flex:1;
@@ -633,7 +497,6 @@
       background:#efe6d5;
       position:relative;
       z-index:1;
-      isolation:isolate;
     }
 
     .mentor-image img{
@@ -642,47 +505,6 @@
       object-fit:cover;
       object-position:center;
       filter:saturate(1.02) contrast(1.02);
-    }
-
-    .taichi-ring{
-      position:absolute;
-      z-index:2;
-      left:50%;
-      top:50%;
-      width:min(55%,420px);
-      aspect-ratio:1 / 1;
-      transform:translate(-50%,-50%);
-      border-radius:50%;
-      pointer-events:none;
-      opacity:.42;
-      animation:taichiBreath 10s ease-in-out infinite;
-      mix-blend-mode:multiply;
-    }
-
-    .taichi-ring::before{
-      content:"";
-      position:absolute;
-      inset:0;
-      border-radius:50%;
-      border:2px solid rgba(197,155,75,.42);
-      box-shadow:
-        0 0 0 10px rgba(197,155,75,.045),
-        0 0 48px rgba(197,155,75,.12);
-    }
-
-    .taichi-ring::after{
-      content:"";
-      position:absolute;
-      inset:12%;
-      border-radius:50%;
-      background:
-        radial-gradient(circle at 50% 25%, rgba(255,248,235,.44) 0 7%, transparent 8%),
-        radial-gradient(circle at 50% 75%, rgba(17,20,38,.18) 0 7%, transparent 8%),
-        linear-gradient(90deg, rgba(17,20,38,.18) 0 50%, rgba(255,248,235,.36) 50% 100%);
-      mask:radial-gradient(circle, #000 62%, transparent 64%);
-      -webkit-mask:radial-gradient(circle, #000 62%, transparent 64%);
-      opacity:.32;
-      animation:yinYangTurn 26s linear infinite;
     }
 
     .cta{
@@ -729,53 +551,6 @@
       line-height:1.35;
       text-align:right;
       display:block;
-    }
-
-    @keyframes heroBreath{
-      0%,100%{opacity:.48; transform:scale(.98)}
-      50%{opacity:.88; transform:scale(1.04)}
-    }
-
-    @keyframes inkDraw{
-      0%{stroke-dashoffset:720; opacity:0}
-      14%{opacity:.38}
-      45%{stroke-dashoffset:0; opacity:.34}
-      70%{stroke-dashoffset:0; opacity:.18}
-      100%{stroke-dashoffset:-720; opacity:0}
-    }
-
-    @keyframes heroLeaf{
-      0%{transform:translate3d(0,0,0) rotate(12deg); opacity:0}
-      12%{opacity:.62}
-      48%{transform:translate3d(-38px,95px,0) rotate(84deg); opacity:.48}
-      82%{transform:translate3d(-82px,168px,0) rotate(138deg); opacity:.22}
-      100%{transform:translate3d(-92px,190px,0) rotate(162deg); opacity:0}
-    }
-
-    @keyframes branchSway{
-      0%,100%{transform:rotate(-1.5deg)}
-      50%{transform:rotate(2.2deg)}
-    }
-
-    @keyframes leafQuiver{
-      0%,100%{transform:rotate(0deg)}
-      50%{transform:rotate(4deg)}
-    }
-
-    @keyframes waterRipple{
-      0%{transform:translate(-50%,-50%) scale(.15); opacity:0}
-      18%{opacity:.48}
-      100%{transform:translate(-50%,-50%) scale(5.8); opacity:0}
-    }
-
-    @keyframes taichiBreath{
-      0%,100%{transform:translate(-50%,-50%) scale(.94); opacity:.28}
-      50%{transform:translate(-50%,-50%) scale(1.04); opacity:.46}
-    }
-
-    @keyframes yinYangTurn{
-      from{transform:rotate(0deg)}
-      to{transform:rotate(360deg)}
     }
 
     @media(max-width:1100px){
@@ -926,14 +701,6 @@
         line-height:1.35;
       }
 
-      .slow-leaf{
-        display:none;
-      }
-
-      .ink-trace{
-        opacity:.24;
-      }
-
       .quote{
         padding:1.45rem;
         border-radius:24px;
@@ -961,16 +728,6 @@
         aspect-ratio:1 / 1;
       }
 
-      .haiku-branch{
-        width:46%;
-        opacity:.48;
-      }
-
-      .haiku-waves{
-        width:38%;
-        opacity:.42;
-      }
-
       .principles{
         grid-template-columns:1fr;
       }
@@ -981,11 +738,6 @@
 
       .mentor-copy{
         padding:1.3rem;
-      }
-
-      .taichi-ring{
-        width:70%;
-        opacity:.34;
       }
 
       footer .wrap{
@@ -1014,24 +766,6 @@
         font-size:1.8rem;
       }
     }
-
-    @media(prefers-reduced-motion:reduce){
-      *,
-      *::before,
-      *::after{
-        animation:none!important;
-        transition:none!important;
-        scroll-behavior:auto!important;
-      }
-
-      .slow-leaf,
-      .ink-trace,
-      .haiku-branch,
-      .haiku-waves,
-      .taichi-ring{
-        display:none!important;
-      }
-    }
   </style>
 </head>
 
@@ -1039,7 +773,7 @@
   <header>
     <div class="wrap topbar">
       <a class="brand" href="#inicio" aria-label="THE MENTOR ROOM">
-        <img class="brand-logo" src="assets/img/logo-tmr.png?v=tmr-motion-001" alt="Logo The Mentor Room">
+        <img class="brand-logo" src="assets/img/logo-tmr.png?v=tmr-clean-001" alt="Logo The Mentor Room">
         <div>
           <strong>THE MENTOR ROOM</strong>
           <small data-i18n="brand_sub">Cuerpo, palabra y conciencia</small>
@@ -1077,16 +811,7 @@
         </div>
 
         <div class="hero-frame">
-          <img src="assets/img/hero-homero-club-autoconocimiento.webp?v=tmr-motion-001" alt="The Mentor Room · umbral de autoconocimiento">
-
-          <div class="ink-trace" aria-hidden="true">
-            <svg viewBox="0 0 600 220" preserveAspectRatio="none">
-              <path d="M20 185 C90 120, 120 210, 185 145 S285 105, 330 150 S410 210, 465 125 S535 60, 580 88"></path>
-            </svg>
-          </div>
-
-          <span class="slow-leaf" aria-hidden="true"></span>
-
+          <img src="assets/img/hero-homero-club-autoconocimiento.webp?v=tmr-clean-001" alt="The Mentor Room · umbral de autoconocimiento">
           <div class="hero-note">
             <p data-i18n="hero_quote">The Mentor Room reúne dos caminos de práctica: el cuerpo que aprende a escuchar y la palabra que aprende a revelar.</p>
           </div>
@@ -1148,27 +873,8 @@
         <div class="grid3">
           <article class="card path-card">
             <div class="path-img">
-              <img src="assets/img/imagen-haiku-contemplacion.webp?v=tmr-motion-001" alt="Haiku y contemplación">
-
-              <div class="haiku-branch" aria-hidden="true">
-                <svg viewBox="0 0 260 150">
-                  <path d="M6 120 C70 86, 105 52, 244 18"></path>
-                  <line x1="82" y1="74" x2="58" y2="48"></line>
-                  <line x1="122" y1="53" x2="108" y2="22"></line>
-                  <line x1="160" y1="39" x2="188" y2="14"></line>
-                  <ellipse cx="55" cy="45" rx="8" ry="19" transform="rotate(-34 55 45)"></ellipse>
-                  <ellipse cx="105" cy="20" rx="8" ry="18" transform="rotate(-10 105 20)"></ellipse>
-                  <ellipse cx="190" cy="13" rx="8" ry="18" transform="rotate(56 190 13)"></ellipse>
-                </svg>
-              </div>
-
-              <div class="haiku-waves" aria-hidden="true">
-                <span></span>
-                <span></span>
-                <span></span>
-              </div>
+              <img src="assets/img/imagen-haiku-contemplacion.webp?v=tmr-clean-001" alt="Haiku y contemplación">
             </div>
-
             <div class="pad">
               <span class="num">1</span>
               <p class="eyebrow">HAIKU</p>
@@ -1179,7 +885,7 @@
 
           <article class="card path-card">
             <div class="path-img">
-              <img src="assets/img/imagen-koan-grieta.webp?v=tmr-motion-001" alt="Koan y grieta">
+              <img src="assets/img/imagen-koan-grieta.webp?v=tmr-clean-001" alt="Koan y grieta">
             </div>
             <div class="pad">
               <span class="num">2</span>
@@ -1191,7 +897,7 @@
 
           <article class="card path-card">
             <div class="path-img">
-              <img src="assets/img/imagen-escritura-simbolica-laberinto.webp?v=tmr-motion-001" alt="Escritura simbólica y laberinto">
+              <img src="assets/img/imagen-escritura-simbolica-laberinto.webp?v=tmr-clean-001" alt="Escritura simbólica y laberinto">
             </div>
             <div class="pad">
               <span class="num">3</span>
@@ -1281,8 +987,7 @@
           </div>
 
           <div class="mentor-image">
-            <img src="assets/img/imagen-the-mentor-room-tai-chi.webp?v=tmr-motion-001" alt="Tai Chi · The Mentor Room">
-            <div class="taichi-ring" aria-hidden="true"></div>
+            <img src="assets/img/imagen-the-mentor-room-tai-chi.webp?v=tmr-clean-001" alt="Tai Chi · The Mentor Room">
           </div>
         </div>
       </div>
@@ -1307,7 +1012,7 @@
   <footer>
     <div class="wrap">
       <div class="footer-brand">
-        <img class="footer-logo" src="assets/img/logo-tmr.png?v=tmr-motion-001" alt="Logo The Mentor Room">
+        <img class="footer-logo" src="assets/img/logo-tmr.png?v=tmr-clean-001" alt="Logo The Mentor Room">
         <div>
           <strong>THE MENTOR ROOM</strong>
         </div>
